@@ -1,5 +1,3 @@
-libs/googletest
-
 CMakeLists.txt.user
 CMakeCache.txt
 CMakeFiles
