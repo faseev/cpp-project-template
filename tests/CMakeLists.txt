@@ -4,5 +4,6 @@ file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES true *.cpp)
 
 add_executable(${PROJECT_TESTS} ${TEST_SOURCES})
 target_link_libraries(${PROJECT_TESTS} gtest ${PROJECT_LIB})
+target_include_directories(${PROJECT_TESTS} PRIVATE ${PROJECT_BINARY_DIR} ${PROJECT_SOURCE_DIR})
 
 add_test(NAME ${PROJECT_TESTS} COMMAND ${PROJECT_TESTS})

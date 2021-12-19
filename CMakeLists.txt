@@ -13,6 +13,9 @@ else()
 	project(simpleproject VERSION 0.0.1)
 endif()
 
+set(PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(src)
+
 option(BUILD_TESTS "Build tests" $ENV{BUILD_TESTS})
 if (BUILD_TESTS)
     add_compile_definitions(BUILD_TESTS)
@@ -28,5 +31,3 @@ if (BUILD_TESTS)
 else()
     message("For building tests use -DBBUILD_TESTS=Yes option.")
 endif()
-
-add_subdirectory(src)
