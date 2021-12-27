@@ -2,6 +2,7 @@
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 set(PROJECT_INSTALL_DIR ${CMAKE_SOURCE_DIR}/dist)
 
@@ -12,6 +13,9 @@ if ($ENV{CI_PIPELINE_ID})
 else()
 	project(simpleproject VERSION 0.0.1)
 endif()
+
+set(PROJECT_SOURCE_DIR ${PROJECT_SOURCE_DIR}/src)
+add_subdirectory(src)
 
 option(BUILD_TESTS "Build tests" $ENV{BUILD_TESTS})
 if (BUILD_TESTS)
@@ -28,5 +32,3 @@ if (BUILD_TESTS)
 else()
     message("For building tests use -DBBUILD_TESTS=Yes option.")
 endif()
-
-add_subdirectory(src)
