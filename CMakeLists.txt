@@ -30,5 +30,5 @@ if (BUILD_TESTS)
 
     add_subdirectory(tests)
 else()
-    message("For building tests use -DBBUILD_TESTS=Yes option.")
+    message("For building tests use -DBUILD_TESTS=Yes option.")
 endif()
